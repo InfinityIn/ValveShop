@@ -1,0 +1,2 @@
+F:\Проекты\ProjectsTS+Vue\ValveShop\vueapp\obj\Debug\vueapp.esproj.SuggestedBindingRedirects.cache
+F:\Проекты\ProjectsTS+Vue\ValveShop\vueapp\obj\Debug\vueapp.esproj.CoreCompileInputs.cache
