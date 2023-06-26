@@ -8,18 +8,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
+                        <th>Главное меню</th>                                              
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="forecast in post" :key="forecast.date">
-                        <td>{{ forecast.date }}</td>
-                        <td>{{ forecast.temperatureC }}</td>
-                        <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
+                    <tr v-for="mainMenuItem in post" :key="mainMenuItem.name">
+                      <td>{{ mainMenuItem.name }}</td>                                             
                     </tr>
                 </tbody>
             </table>
@@ -30,13 +24,15 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
 
-    type Forecasts = {
-        date: string
+  type MainMenuItems = {
+        id: number,
+        name: string,
+        priority: number
     }[];
 
     interface Data {
         loading: boolean,
-        post: null | Forecasts
+        post: null | MainMenuItems
     }
 
     export default defineComponent({
@@ -60,10 +56,10 @@
                 this.post = null;
                 this.loading = true;
 
-                fetch('weatherforecast')
+                fetch('mainMenuItem')
                     .then(r => r.json())
                     .then(json => {
-                        this.post = json as Forecasts;
+                        this.post = json as MainMenuItems;
                         this.loading = false;
                         return;
                     });
