@@ -8,7 +8,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Главное меню</th>                                              
+                        <th>РЈРїСЂР°РІР»РµРЅРёРµ</th>                                              
                     </tr>
                 </thead>
                 <tbody>
@@ -56,7 +56,7 @@
                 this.post = null;
                 this.loading = true;
 
-                fetch('menuitem')
+                fetch('mainmenu')
                     .then(r => r.json())
                     .then(json => {
                         this.post = json as MainMenuItems;
